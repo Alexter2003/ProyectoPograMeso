@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+	int puntuacion1, puntuacion2, puntuacion3, puntuacion4;
+	float media;
+	
+	
+	printf("Ingrese la puntuacion 1 (entre 0 y 100): ");
+	scanf("%d", &puntuacion1);
+	
+	printf("Ingrese la puntuacion 2 (entre 0 y 100): ");
+	scanf("%d", &puntuacion2);
+	
+	printf("Ingrese la puntuacion 3 (entre 0 y 100): ");
+	scanf("%d", &puntuacion3);
+	
+	printf("Ingrese la puntuacion 4 (entre 0 y 100): ");
+	scanf("%d", &puntuacion4);
+	
+
+	media = (float)(puntuacion1 + puntuacion2 + puntuacion3 + puntuacion4) / 4;
+	
+	
+	printf("La media es: %.2f\n", media);
+	
+	
+	if (media >= 90 && media <= 100) {
+		printf("Calificacion: A\n");
+	} else if (media >= 80 && media <= 89) {
+		printf("Calificacion: B\n");
+	} else if (media >= 70 && media <= 79) {
+		printf("Calificacion: C\n");
+	} else if (media >= 60 && media <= 69) {
+		printf("Calificacion: D\n");
+	} else {
+		printf("Calificacion: E\n");
+	}
+	
+	return 0;
+}

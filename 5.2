@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main() {
+	int hours, minutes;
+	printf("Ingrese la hora en notación de 24 horas (hh:mm): ");
+	scanf("%d:%d", &hours, &minutes);
+	
+	// Convert to 12-hour notation using a switch statement
+	switch (hours) {
+	case 0:
+		hours = 12;
+		printf("%d:%02d AM\n", hours, minutes);
+		break;
+	case 12:
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 13:
+		hours = 1;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 14:
+		hours = 2;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 15:
+		hours = 3;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 16:
+		hours = 4;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 17:
+		hours = 5;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 18:
+		hours = 6;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 19:
+		hours = 7;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 20:
+		hours = 8;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 21:
+		hours = 9;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 22:
+		hours = 10;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	case 23:
+		hours = 11;
+		printf("%d:%02d PM\n", hours, minutes);
+		break;
+	default:
+		if (hours < 12) {
+			printf("%d:%02d AM\n", hours, minutes);
+		} else {
+			printf("%d:%02d PM\n", hours - 12, minutes);
+		}
+		break;
+	}
+	
+
+	return 0;
+}
+

@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main()
+{
+	int anio, mes, numdias;
+	
+	printf("Ingrese el año: ");
+	scanf("%d",&anio);
+	
+	printf("Ingrese el mes (1-12): ");
+	scanf("%d", &mes);
+	
+	
+	int esAnioBisiesto = 0;
+	if((anio%4==0 & anio%100<0) | anio%400==0){
+		esAnioBisiesto = 1;
+	}
+	
+	
+	switch(mes){
+	case 1:
+		numdias = 31;
+		break;
+	case 2:
+		if(esAnioBisiesto){
+			numdias = 29;
+		}
+		else{
+			numdias = 28;
+		}
+		break;
+	case 3:
+		numdias = 31;
+		break;
+	case 4:
+		numdias = 30;
+		break;
+	case 5:
+		numdias = 31;
+		break;
+	case 6:
+		numdias = 30;
+		break;
+	case 7:
+		numdias = 31;
+		break;
+	case 8:
+		numdias = 31;
+		break;
+	case 9:
+		numdias = 30;
+		break;
+	case 10:
+		numdias = 31;
+		break;
+	case 11:
+		numdias = 30;
+		break;
+	case 12:
+		numdias = 31;
+	}
+	
+	printf("El mes %d del año %d tiene %d dias.\n", mes, anio, numdias);
+	
+	return 0;
+}

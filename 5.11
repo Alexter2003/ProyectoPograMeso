@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main() {
+	int euros, billetes_500, billetes_200, billetes_100, billetes_50, billetes_20, billetes_10, billetes_5, monedas_2, monedas_1, centimos_50, centimos_20, centimos_10, centimos_5, centimos_2, centimos_1;
+	
+	printf("Ingrese la cantidad de euros a cambiar: ");
+	scanf("%d", &euros);
+	
+	billetes_500 = euros / 500;
+	euros = euros % 500;
+	
+	billetes_200 = euros / 200;
+	euros = euros % 200;
+	
+	billetes_100 = euros / 100;
+	euros = euros % 100;
+	
+	billetes_50 = euros / 50;
+	euros = euros % 50;
+	
+	billetes_20 = euros / 20;
+	euros = euros % 20;
+	
+	billetes_10 = euros / 10;
+	euros = euros % 10;
+	
+	billetes_5 = euros / 5;
+	euros = euros % 5;
+	
+	monedas_2 = euros / 2;
+	euros = euros % 2;
+	
+	monedas_1 = euros / 1;
+	euros = euros % 1;
+	
+	centimos_50 = euros * 100 / 50;
+	euros = euros * 100 % 50;
+	
+	centimos_20 = euros * 100 / 20;
+	euros = euros * 100 % 20;
+	
+	centimos_10 = euros * 100 / 10;
+	euros = euros * 100 % 10;
+	
+	centimos_5 = euros * 100 / 5;
+	euros = euros * 100 % 5;
+	
+	centimos_2 = euros * 100 / 2;
+	euros = euros * 100 % 2;
+	
+	centimos_1 = euros * 100 / 1;
+	
+	printf("El cambio óptimo es:\n");
+	printf("%d billetes de 500 euros\n", billetes_500);
+	printf("%d billetes de 200 euros\n", billetes_200);
+	printf("%d billetes de 100 euros\n", billetes_100);
+	printf("%d billetes de 50 euros\n", billetes_50);
+	printf("%d billetes de 20 euros\n", billetes_20);
+	printf("%d billetes de 10 euros\n", billetes_10);
+	printf("%d billetes de 5 euros\n", billetes_5);
+	printf("%d monedas de 2 euros\n", monedas_2);
+	printf("%d monedas de 1 euro\n", monedas_1);
+	printf("%d monedas de 50 centimos\n", centimos_50);
+	printf("%d monedas de 20 centimos\n", centimos_20);
+	printf("%d monedas de 10 centimos\n", centimos_10);
+	printf("%d monedas de 5 centimos\n", centimos_5);
+	printf("%d monedas de 2 centimos\n", centimos_2);
+	printf("%d monedas de 1 centimo\n", centimos_1);
+	
+	return 0;
+}

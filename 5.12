@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+	int num1, num2, resultado;
+	char operador;
+	
+	printf("Ingrese el primer número: ");
+	scanf("%d", &num1);
+	
+	printf("Ingrese el segundo número: ");
+	scanf("%d", &num2);
+	
+	printf("Ingrese el operador (+, -, *, /, %%): ");
+	scanf(" %c", &operador);
+	
+	switch(operador) {
+	case '+':
+		resultado = num1 + num2;
+		printf("La suma es %d\n", resultado);
+		break;
+	case '-':
+		resultado = num1 - num2;
+		printf("La diferencia es %d\n", resultado);
+		break;
+	case '*':
+		resultado = num1 * num2;
+		printf("El producto es %d\n", resultado);
+		break;
+	case '/':
+		if(num2 == 0) {
+			printf("Error: división por cero\n");
+		} else {
+			resultado = num1 / num2;
+			printf("El cociente es %d\n", resultado);
+		}
+		break;
+	case '%':
+		if(num2 == 0) {
+			printf("Error: división por cero\n");
+		} else {
+			resultado = num1 % num2;
+			printf("El resto es %d\n", resultado);
+		}
+		break;
+	default:
+		printf("Error: operador inválido\n");
+	}
+	
+	return 0;
+}

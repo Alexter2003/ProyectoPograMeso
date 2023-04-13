@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+	int day_birth, month_birth, year_birth;
+	int day_now, month_now, year_now;
+	int age_years, age_months, age_days;
+	
+	printf("Ingrese la fecha de nacimiento (DD MM AAAA): ");
+	scanf("%d %d %d", &day_birth, &month_birth, &year_birth);
+	
+	printf("Ingrese la fecha actual (DD MM AAAA): ");
+	scanf("%d %d %d", &day_now, &month_now, &year_now);
+	
+	age_years = year_now - year_birth - (month_now < month_birth || (month_now == month_birth && day_now < day_birth));
+	
+	if (age_years < 1) {
+		age_months = (month_now - month_birth - (day_now < day_birth)) + 12 * (year_now - year_birth - 1);
+		age_days = day_now - day_birth;
+		
+		if (age_days < 0) {
+			age_months--;
+			age_days += 30;
+		}
+		
+		printf("La edad es %d meses y %d días\n", age_months, age_days);
+	} else {
+		printf("La edad es %d años\n", age_years);
+	}
+	
+	return 0;
+}

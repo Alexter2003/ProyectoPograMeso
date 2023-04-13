@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// Función que convierte un número arábigo en su equivalente romano
+void arabic_to_roman(int n) {
+	int arabic[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+	char* roman[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+	
+	if (n < 1 || n > 2000) {
+		printf("El número debe estar en el rango de 1 a 2000.\n");
+		return;
+	}
+	
+	printf("El año en números romanos es: ");
+	
+	int i = 0;
+	while (n > 0) {
+		if (n >= arabic[i]) {
+			printf("%s", roman[i]);
+			n -= arabic[i];
+		} else {
+			i++;
+		}
+	}
+	printf("\n");
+}
+
+int main() {
+	int year;
+	
+	printf("Ingrese un año en cifras arábigas: ");
+	scanf("%d", &year);
+	
+	arabic_to_roman(year);
+	
+	return 0;
+}
+	
+

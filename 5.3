@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	int day, month, year;
+	char month_str[20];
+	
+	printf("Ingrese la fecha en formato usual (e.g. 15 febrero 2014): ");
+	scanf("%d %s %d", &day, month_str, &year);
+	
+	// Convertimos el mes de una cadena a un número
+	if (strcmp(month_str, "enero") == 0) {
+		month = 1;
+	} else if (strcmp(month_str, "febrero") == 0) {
+		month = 2;
+	} else if (strcmp(month_str, "marzo") == 0) {
+		month = 3;
+	} else if (strcmp(month_str, "abril") == 0) {
+		month = 4;
+	} else if (strcmp(month_str, "mayo") == 0) {
+		month = 5;
+	} else if (strcmp(month_str, "junio") == 0) {
+		month = 6;
+	} else if (strcmp(month_str, "julio") == 0) {
+		month = 7;
+	} else if (strcmp(month_str, "agosto") == 0) {
+		month = 8;
+	} else if (strcmp(month_str, "septiembre") == 0) {
+		month = 9;
+	} else if (strcmp(month_str, "octubre") == 0) {
+		month = 10;
+	} else if (strcmp(month_str, "noviembre") == 0) {
+		month = 11;
+	} else if (strcmp(month_str, "diciembre") == 0) {
+		month = 12;
+	} else {
+		printf("El mes ingresado es inválido.\n");
+		return 1;
+	}
+	
+	printf("%d %d %d\n", day, month, year);
+	
+	return 0;
+}

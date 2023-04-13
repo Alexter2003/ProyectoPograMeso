@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+	float horas_trabajadas, tasa, salario_bruto, salario_neto;
+	const float tasa_extra = 1.5;
+	const float impuestos_bajos = 0.0;
+	const float impuestos_altos = 0.1;
+	
+	printf("Ingrese la cantidad de horas trabajadas esta semana: ");
+	scanf("%f", &horas_trabajadas);
+	printf("Ingrese la tasa horaria: ");
+	scanf("%f", &tasa);
+	
+	if (horas_trabajadas < 38) {
+		salario_bruto = horas_trabajadas * tasa;
+	} else {
+		float horas_extra = horas_trabajadas - 38;
+		salario_bruto = 38 * tasa + horas_extra * tasa * tasa_extra;
+	}
+	
+	if (salario_bruto <= 800) {
+		salario_neto = salario_bruto;
+		printf("El salario neto semanal es: %.2f\n", salario_neto);
+	} else {
+		float impuestos = salario_bruto * impuestos_altos;
+		salario_neto = salario_bruto - impuestos;
+		printf("El salario neto semanal es: %.2f (se aplicó un impuesto del %.0f%%)\n", salario_neto, impuestos_altos * 100);
+	}
+	
+	return 0;
+}
